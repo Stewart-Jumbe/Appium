@@ -18,9 +18,15 @@ public class App
   
     
 //    	Write a Java program to reverse an array of integer values.
-    	int[] numArray = {10,9,8,7,6,5,4,3,2,1};
-    	reverseArray(numArray);
-    	
+    	//int[] numArray = {10,9,8,7,6,5,4,3,2,1};
+    	//reverseArray(numArray);
+
+    	//Reversing using created class
+    	 //initialising reversedArray2
+        int [] myArray = {20,30,40,50,60,70,210,250,999};
+        ArrayExerciseMethods reverse = new ArrayExerciseMethods();
+        System.out.print(" ");
+        System.out.println(reverse.getReversedArray(myArray));
 
     }
     
@@ -53,5 +59,12 @@ public class App
 	    	System.out.println(" ");
     }
 }
+    
+    
+  
+    
+   
+    
+  
     
 }
