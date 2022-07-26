@@ -23,10 +23,16 @@ public class App
 
     	//Reversing using created class
     	 //initialising reversedArray2
-        int [] myArray = {20,30,40,50,60,70,210,250,999};
-        ArrayExerciseMethods reverse = new ArrayExerciseMethods();
-        System.out.print(" ");
-        System.out.println(reverse.getReversedArray(myArray));
+//        int [] myArray = {20,30,40,50,60,70,210,250,999};
+//        ArrayExerciseMethods reverse = new ArrayExerciseMethods();
+//        System.out.print(" ");
+//        System.out.println(reverse.getReversedArray(myArray));
+    	
+    	ArrayExerciseMethods methods = new ArrayExerciseMethods();
+    	int[] numberArray = {99999,100,20,7,99,1256,0};
+    	//System.out.print(methods.findMinMaxValue(numberArray));
+    	System.out.print(methods.findMinMaxValue2(numberArray));
+    	
 
     }
     
