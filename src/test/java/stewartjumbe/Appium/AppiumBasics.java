@@ -4,8 +4,10 @@ import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
+import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
@@ -38,6 +40,11 @@ public class AppiumBasics {
 		
 		@SuppressWarnings("unused")
 		AndroidDriver driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), options);
+		
+		//Actual Automation
+		//By. :Xpath, id, classname, 
+		//AppiumBy. :accessibilityId, androidUIAutomator
+		driver.findElement(AppiumBy.accessibilityId("Preference")).click();
 		
 		
 		driver.quit();
