@@ -5,7 +5,9 @@
     <classes>
       <class name="stewartjumbe.Appium.AppiumBasics">
         <methods>
-          <include name="appiumTest"/>
+          <include name="configureAppium"/>
+          <include name="tearDown"/>
+          <include name="WifiSettingsName"/>
         </methods>
       </class> <!-- stewartjumbe.Appium.AppiumBasics -->
     </classes>

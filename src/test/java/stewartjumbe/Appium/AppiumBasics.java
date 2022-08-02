@@ -13,42 +13,32 @@ import io.appium.java_client.android.options.UiAutomator2Options;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
 
-public class AppiumBasics {
+public class AppiumBasics extends BaseTest {
+	
+
 
 	@Test
-	public void appiumTest() throws MalformedURLException {
+	public void WifiSettingsName() throws MalformedURLException {
 		
-		System.out.println("Testing testing 123");
+	
+		//configureAppium();method is automatically executed due to AfterClass annotation on parent class (BaseTest);
 		
-		//Starting appium server
-		AppiumDriverLocalService service = new AppiumServiceBuilder()
-				.withAppiumJS(new File("\\Users\\Jumbe Home\\AppData\\Roaming\\npm\\node_modules\\appium\\build\\lib\\main.js"))
-				.withIPAddress("127.0.0.1").usingPort(4723)
-				.build();
-		
-		service.start();
-		
-		
-		//Android driver
-		//How architecture works, appiam code -> appium server (interprets code and triggers action on the device) -> Mobile
-		UiAutomator2Options options = new UiAutomator2Options();
-		
-		//name of the phone we're using
-		options.setDeviceName("Pixel_4_XL_API_31");
-		
-		options.setApp("\\Users\\Jumbe Home\\Documents\\Software Development\\JAVA\\Appium\\src\\test\\java\\resources\\ApiDemos-debug.apk");
-		
-		@SuppressWarnings("unused")
-		AndroidDriver driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), options);
 		
 		//Actual Automation
-		//By. :Xpath, id, classname, 
-		//AppiumBy. :accessibilityId, androidUIAutomator
+		
+		//
+		//findElement(By. :Xpath, id, classname, 
+		//findElement(AppiumBy. :accessibilityId, androidUIAutomator
+		
+		
+		//Xpath Syntax:
+		//tagName[@attribute='value']
+		
 		driver.findElement(AppiumBy.accessibilityId("Preference")).click();
-		
-		
-		driver.quit();
-		service.stop(); //stopping server
+		driver.findElement(By.xpath("//android.widget.TextView[@content-desc=\'3. Preference dependencies\']")).click();
+		driver.findElement(By.id("android:id/checkbox")).click();
+		//tearDown() method is automatically executed due to AfterClass annotation on parent class (BaseTest);
 		
 	}
+	
 }
