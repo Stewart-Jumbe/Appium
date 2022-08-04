@@ -3,6 +3,7 @@ package stewartjumbe.Appium;
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.time.Duration;
 
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -51,6 +52,9 @@ public class BaseTest {
 		options.setApp("\\Users\\Jumbe Home\\Documents\\Software Development\\JAVA\\Appium\\src\\test\\java\\resources\\ApiDemos-debug.apk");
 		
 		driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), options);
+		
+		//waiting before closing
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		
 	}
 	
