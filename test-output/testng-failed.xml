@@ -6,8 +6,8 @@
       <class name="stewartjumbe.Appium.AppiumBasics">
         <methods>
           <include name="configureAppium"/>
+          <include name="scrollExample"/>
           <include name="tearDown"/>
-          <include name="longPressGestureExample"/>
         </methods>
       </class> <!-- stewartjumbe.Appium.AppiumBasics -->
     </classes>

@@ -60,7 +60,7 @@ public class AppiumBasics extends BaseTest {
 		
 	}
 	
-	@Test
+	@Test(enabled = false)
 	public void longPressGestureExample() {
 		
 		//Tapping Views
@@ -88,8 +88,43 @@ public class AppiumBasics extends BaseTest {
 		
 		
 		
+	}
+	
+	@Test
+	public void scrollExample() {
+		//Tapping Views
+				driver.findElement(AppiumBy.accessibilityId("Views")).click();
+				
+		//Scrolling to "WebView" text using androidAutomator
+		// To use androidAutomator
+				//driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"WebView\"));")).click();
+				scollToText("Webview");
+				
+				
+		//Alternative Scroll method if you have no idea where the scolling should stop
+				//scrollToEndAction();
+	}
+
+	protected void scrollToEndAction() {
+		boolean canScrollMore;
+		do {
+		canScrollMore = (Boolean) ((JavascriptExecutor) driver).executeScript("mobile: scrollGesture", ImmutableMap.of(
+			    "left", 100, "top", 100, "width", 200, "height", 200,
+			    "direction", "down",
+			    "percent", 3.0
+			));}
+		while(canScrollMore);
+	}
+	 /**
+	  * Method to scroll to the text of a particular element
+	  * @param textName
+	  * 
+	  */
+	protected void scollToText(String textName) {
 		
 		
+		
+		driver.findElement(AppiumBy.androidUIAutomator(String.format("new UiScrollable(new UiSelector()).scrollIntoView(text(\"%s\"));",textName)));
 		
 	}
 
