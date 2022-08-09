@@ -13,6 +13,7 @@ import org.testng.annotations.BeforeClass;
 
 import com.google.common.collect.ImmutableMap;
 
+import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
@@ -75,5 +76,31 @@ public class BaseTest {
 		((JavascriptExecutor) driver).executeScript("mobile: longClickGesture", ImmutableMap.of(
 			    "elementId", ((RemoteWebElement) element).getId(),
 			    "duration",2000));
+	}
+	
+	/**
+	 * Method to Scroll to the end of a page/view
+	 */
+	protected void scrollToEndAction() {
+		boolean canScrollMore;
+		do {
+		canScrollMore = (Boolean) ((JavascriptExecutor) driver).executeScript("mobile: scrollGesture", ImmutableMap.of(
+			    "left", 100, "top", 100, "width", 200, "height", 200,
+			    "direction", "down",
+			    "percent", 3.0
+			));}
+		while(canScrollMore);
+	}
+	
+	 /**
+	  * Method to scroll to the text of a particular element
+	  * If you don't know what element to scroll to use scrollToEndAction method
+	  * @param textName
+	  * 
+	  */
+	protected void scrollToText(String textName) {
+		
+		driver.findElement(AppiumBy.androidUIAutomator(String.format("new UiScrollable(new UiSelector()).scrollIntoView(text(\"%s\"));",textName)));
+		
 	}
 }
