@@ -95,12 +95,25 @@ public class BaseTest {
 	 /**
 	  * Method to scroll to the text of a particular element
 	  * If you don't know what element to scroll to use scrollToEndAction method
-	  * @param textName
+	  * @param textName, text Attribute of the element to be scrolled to 
 	  * 
 	  */
 	protected void scrollToText(String textName) {
 		
 		driver.findElement(AppiumBy.androidUIAutomator(String.format("new UiScrollable(new UiSelector()).scrollIntoView(text(\"%s\"));",textName)));
 		
+	}
+	
+	/**
+	 * 
+	 * @param elementToSwipeFrom, the WebElement that the swipe should be applied on
+	 * @param swipeDirection, the direction that the swipe should go (left or right)
+	 */
+	protected void swipeAction(WebElement elementToSwipeFrom, String swipeDirection) {
+		((JavascriptExecutor) driver).executeScript("mobile: swipeGesture", ImmutableMap.of(
+			    "elementId", ((RemoteWebElement) elementToSwipeFrom).getId(),
+			    "direction", swipeDirection,
+			    "percent", 0.75
+			));
 	}
 }

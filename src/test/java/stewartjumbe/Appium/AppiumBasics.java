@@ -116,8 +116,19 @@ public class AppiumBasics extends BaseTest {
 		
 		//Tapping Photos
 				driver.findElement(By.xpath("//android.widget.TextView[@content-desc=\"1. Photos\"]")).click();
+				
+				//Before swiping focusable value should be true for the first image, it will become false when the screen is swiped to the left
+				WebElement firstElement = driver.findElement(By.xpath("(//android.widget.ImageView)[1]"));
+				Assert.assertEquals(firstElement.getAttribute("focusable"), "true", "Swipe has failed as focusable attribute is false");
+				
+				//Swipe
+				swipeAction(firstElement,"left");
 		
+				//Assertion to check that focusable value on first image is not false
+				Assert.assertEquals(firstElement.getAttribute("focusable"), "false","Swipe has failed as focusable attribute is true");
 	}
+
+	
 
 
 

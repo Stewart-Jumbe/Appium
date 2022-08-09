@@ -5,8 +5,8 @@
     <classes>
       <class name="stewartjumbe.Appium.AppiumBasics">
         <methods>
+          <include name="swipeExample"/>
           <include name="configureAppium"/>
-          <include name="scrollExample"/>
           <include name="tearDown"/>
         </methods>
       </class> <!-- stewartjumbe.Appium.AppiumBasics -->
