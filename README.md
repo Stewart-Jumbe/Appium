@@ -24,8 +24,8 @@ The following have to be added to path
 
 ## Installing Appium
 1. Start up a CMD window
-2.enter npm install -g appium or npm install --location=global appium@next
-3.Check its installed by starting appium. in CMD type: appium
+2. Enter npm install -g appium or npm install --location=global appium@next
+3. Check its installed by starting appium. in CMD type: appium
 
 ## Installing Appium drivers
 
