@@ -8,6 +8,7 @@ import java.net.URL;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Point;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebElement;
 import org.testng.Assert;
@@ -26,7 +27,7 @@ public class AppiumBasics extends BaseTest {
 
 	
 	@Test(enabled = false)
-	public void WifiSettingsName() throws MalformedURLException {
+	public void WifiSettingsNameTest() throws MalformedURLException {
 		
 	
 		//configureAppium();method is automatically executed due to AfterClass annotation on parent class (BaseTest);
@@ -61,7 +62,7 @@ public class AppiumBasics extends BaseTest {
 	}
 	
 	@Test(enabled = false)
-	public void longPressGestureExample() {
+	public void longPressGestureTest() {
 		
 		//Tapping Views
 		driver.findElement(AppiumBy.accessibilityId("Views")).click();
@@ -91,7 +92,7 @@ public class AppiumBasics extends BaseTest {
 	}
 	
 	@Test(enabled = false)
-	public void scrollExample() {
+	public void scrollTest() {
 		//Tapping Views
 				driver.findElement(AppiumBy.accessibilityId("Views")).click();
 				
@@ -105,8 +106,8 @@ public class AppiumBasics extends BaseTest {
 				//scrollToEndAction();
 	}
 	
-	@Test
-	public void swipeExample() {
+	@Test(enabled = false)
+	public void swipeTest() {
 	
 		//Tapping Views
 		driver.findElement(AppiumBy.accessibilityId("Views")).click();
@@ -127,6 +128,26 @@ public class AppiumBasics extends BaseTest {
 				//Assertion to check that focusable value on first image is not false
 				Assert.assertEquals(firstElement.getAttribute("focusable"), "false","Swipe has failed as focusable attribute is true");
 	}
+	
+	@Test(enabled = true)
+	public void dragDropTest() {
+		//Tapping Views
+				driver.findElement(AppiumBy.accessibilityId("Views")).click();
+				
+		//Tapping Drag and Drop
+				driver.findElement(AppiumBy.accessibilityId("Drag and Drop")).click();
+				
+				WebElement source = driver.findElement(By.id("io.appium.android.apis:id/drag_dot_3"));
+				int xCoordinate = 827;
+				int yCoordinate = 757;
+				dragNDropAction(source, xCoordinate, yCoordinate);
+				
+				Assert.assertEquals(driver.findElement(By.id("io.appium.android.apis:id/drag_result_text")).getText(),"Dropped!");
+
+	
+	}
+
+
 
 	
 

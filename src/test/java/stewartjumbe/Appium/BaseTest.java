@@ -39,12 +39,20 @@ public class BaseTest {
 
 		System.out.println("Starting configuration");
 		
-		//Starting appium server
-		service = new AppiumServiceBuilder()
-				.withAppiumJS(new File("\\Users\\Jumbe Home\\AppData\\Roaming\\npm\\node_modules\\appium\\build\\lib\\main.js"))
-				.withIPAddress("127.0.0.1").usingPort(4723)
-				.build();
+		//Starting appium server when using PC
+//		service = new AppiumServiceBuilder()
+//				.withAppiumJS(new File("\\Users\\Jumbe Home\\AppData\\Roaming\\npm\\node_modules\\appium\\build\\lib\\main.js"))
+//				.withIPAddress("127.0.0.1").usingPort(4723)
+//				.build();
 		
+		
+		//Starting appium server when using Laptop
+		service = new AppiumServiceBuilder()
+		.withAppiumJS(new File("\\Users\\stewart.jumbe\\AppData\\Roaming\\npm\\node_modules\\appium\\build\\lib\\main.js"))
+		.withIPAddress("127.0.0.1").usingPort(4723)
+		.build();
+		
+		//starting server
 		service.start();
 		
 		
@@ -55,7 +63,11 @@ public class BaseTest {
 		//name of the phone we're using
 		options.setDeviceName("Pixel_4_XL_API_31");
 		
-		options.setApp("\\Users\\Jumbe Home\\Documents\\Software Development\\JAVA\\Appium\\src\\test\\java\\resources\\ApiDemos-debug.apk");
+		//use on desktop
+		//options.setApp("\\Users\\Jumbe Home\\Documents\\Software Development\\JAVA\\Appium\\src\\test\\java\\resources\\ApiDemos-debug.apk");
+		
+		//use on laptop
+		options.setApp("\\Users\\stewart.jumbe\\Documents\\Software Development\\JAVA\\Appium\\src\\test\\java\\resources\\ApiDemos-debug.apk");
 		
 		driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), options);
 		
@@ -116,4 +128,19 @@ public class BaseTest {
 			    "percent", 0.75
 			));
 	}
+	
+	
+	/**
+	 * @param source, WebElement of the element to be picked up and dragged
+	 * @param xCoordinate, onscreen x coordinate determined via appium inspector
+	 * @param yCoordinate, onscrren y coordinate determined via appium inpsector
+	 */
+	protected void dragNDropAction(WebElement source, int xCoordinate, int yCoordinate) {
+		((JavascriptExecutor) driver).executeScript("mobile: dragGesture", ImmutableMap.of(
+			    "elementId", ((RemoteWebElement) source).getId(),
+			    "endX", xCoordinate,
+			    "endY", yCoordinate
+			));
+	}
 }
+
