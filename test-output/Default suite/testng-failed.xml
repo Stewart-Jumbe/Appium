@@ -5,9 +5,9 @@
     <classes>
       <class name="stewartjumbe.Appium.AppiumBasics">
         <methods>
-          <include name="swipeExample"/>
           <include name="configureAppium"/>
           <include name="tearDown"/>
+          <include name="misceallanousAppiumActions"/>
         </methods>
       </class> <!-- stewartjumbe.Appium.AppiumBasics -->
     </classes>

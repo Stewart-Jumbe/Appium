@@ -7,6 +7,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.DeviceRotation;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.WebElement;
@@ -18,6 +19,8 @@ import com.google.common.collect.ImmutableMap;
 
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.nativekey.AndroidKey;
+import io.appium.java_client.android.nativekey.KeyEvent;
 import io.appium.java_client.android.options.UiAutomator2Options;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
@@ -129,7 +132,7 @@ public class AppiumBasics extends BaseTest {
 				Assert.assertEquals(firstElement.getAttribute("focusable"), "false","Swipe has failed as focusable attribute is true");
 	}
 	
-	@Test(enabled = true)
+	@Test(enabled = false)
 	public void dragDropTest() {
 		//Tapping Views
 				driver.findElement(AppiumBy.accessibilityId("Views")).click();
@@ -145,6 +148,41 @@ public class AppiumBasics extends BaseTest {
 				Assert.assertEquals(driver.findElement(By.id("io.appium.android.apis:id/drag_result_text")).getText(),"Dropped!");
 
 	
+	}
+	
+	@Test(enabled =true)
+	public void miscellanousAppiumActions() {
+		
+		driver.findElement(AppiumBy.accessibilityId("Preference")).click();
+		driver.findElement(By.xpath("//android.widget.TextView[@content-desc=\'3. Preference dependencies\']")).click();
+		driver.findElement(By.id("android:id/checkbox")).click();
+		
+		//**Changing Screen orientation to landscape
+				DeviceRotation landscape = new DeviceRotation(0,0,90);
+				driver.rotate(landscape);
+				
+		driver.findElement(By.xpath("(//android.widget.RelativeLayout)[2]")).click();
+		String alertTitle = driver.findElement(By.id("android:id/alertTitle")).getText();
+		Assert.assertEquals(alertTitle,"WiFi settings","Text WiFi settings not found");
+		
+		
+		//Adding things to the click board 
+		driver.setClipboardText("ABC");
+		
+		//Entering wifi name from clipboard
+		driver.findElement(By.id("android:id/edit")).sendKeys(driver.getClipboardText());
+		Assert.assertEquals(driver.findElement(By.id("android:id/edit")).getText(), "ABC","Wifi name ABC not yet");
+		
+		//clicking ok
+		//driver.findElement(By.id("android:id/button1")).click(); //alternative way of doing the same shown below
+		driver.findElements(AppiumBy.className("android.widget.Button")).get(1);
+		
+		//Using device key
+		driver.pressKey(new KeyEvent(AndroidKey.ENTER));
+		driver.pressKey(new KeyEvent(AndroidKey.APP_SWITCH));
+
+		//Presses the home button on the device
+		driver.pressKey(new KeyEvent(AndroidKey.HOME));
 	}
 
 
