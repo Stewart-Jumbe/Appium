@@ -4,7 +4,7 @@
     {
       "type": "text",
       "name": "appium:app",
-      "value": "\\Users\\Jumbe Home\\Documents\\Software Development\\JAVA\\Appium\\src\\test\\java\\resources\\ApiDemos-debug.apk"
+      "value": "\\Users\\Jumbe_Home\\Documents\\Software Development\\JAVA\\Appium\\src\\test\\java\\resources\\ApiDemos-debug.apk"
     },
     {
       "type": "text",

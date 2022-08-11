@@ -167,19 +167,19 @@ public class AppiumBasics extends BaseTest {
 		
 		
 		//Adding things to the click board 
-		driver.setClipboardText("ABC");
+		driver.setClipboardText("ABC123");
 		
 		//Entering wifi name from clipboard
 		driver.findElement(By.id("android:id/edit")).sendKeys(driver.getClipboardText());
-		Assert.assertEquals(driver.findElement(By.id("android:id/edit")).getText(), "ABC","Wifi name ABC not yet");
+		Assert.assertEquals(driver.findElement(By.id("android:id/edit")).getText(), "ABC123","Wifi name ABC not yet");
 		
 		//clicking ok
 		//driver.findElement(By.id("android:id/button1")).click(); //alternative way of doing the same shown below
-		driver.findElements(AppiumBy.className("android.widget.Button")).get(1);
+		driver.findElements(AppiumBy.className("android.widget.Button")).get(1).click();
 		
 		//Using device key
 		driver.pressKey(new KeyEvent(AndroidKey.ENTER));
-		driver.pressKey(new KeyEvent(AndroidKey.APP_SWITCH));
+		//driver.pressKey(new KeyEvent(AndroidKey.APP_SWITCH));
 
 		//Presses the home button on the device
 		driver.pressKey(new KeyEvent(AndroidKey.HOME));

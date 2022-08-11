@@ -40,17 +40,17 @@ public class BaseTest {
 		System.out.println("Starting configuration");
 		
 		//Starting appium server when using PC
-//		service = new AppiumServiceBuilder()
-//				.withAppiumJS(new File("\\Users\\Jumbe Home\\AppData\\Roaming\\npm\\node_modules\\appium\\build\\lib\\main.js"))
-//				.withIPAddress("127.0.0.1").usingPort(4723)
-//				.build();
+		service = new AppiumServiceBuilder()
+				.withAppiumJS(new File("\\Users\\Jumbe_Home\\AppData\\Roaming\\npm\\node_modules\\appium\\build\\lib\\main.js"))
+				.withIPAddress("127.0.0.1").usingPort(4723)
+				.build();
 		
 		
 		//Starting appium server when using Laptop
-		service = new AppiumServiceBuilder()
-		.withAppiumJS(new File("\\Users\\stewart.jumbe\\AppData\\Roaming\\npm\\node_modules\\appium\\build\\lib\\main.js"))
-		.withIPAddress("127.0.0.1").usingPort(4723)
-		.build();
+//		service = new AppiumServiceBuilder()
+//		.withAppiumJS(new File("\\Users\\stewart.jumbe\\AppData\\Roaming\\npm\\node_modules\\appium\\build\\lib\\main.js"))
+//		.withIPAddress("127.0.0.1").usingPort(4723)
+//		.build();
 		
 		//starting server
 		service.start();
@@ -64,10 +64,10 @@ public class BaseTest {
 		options.setDeviceName("Pixel_4_XL_API_31");
 		
 		//use on desktop
-		//options.setApp("\\Users\\Jumbe Home\\Documents\\Software Development\\JAVA\\Appium\\src\\test\\java\\resources\\ApiDemos-debug.apk");
+		options.setApp("\\Users\\Jumbe_Home\\Documents\\Software Development\\JAVA\\Appium\\src\\test\\java\\resources\\ApiDemos-debug.apk");
 		
 		//use on laptop
-		options.setApp("\\Users\\stewart.jumbe\\Documents\\Software Development\\JAVA\\Appium\\src\\test\\java\\resources\\ApiDemos-debug.apk");
+		//options.setApp("\\Users\\stewart.jumbe\\Documents\\Software Development\\JAVA\\Appium\\src\\test\\java\\resources\\ApiDemos-debug.apk");
 		
 		driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), options);
 		
@@ -143,4 +143,3 @@ public class BaseTest {
 			));
 	}
 }
-

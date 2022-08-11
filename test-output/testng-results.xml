@@ -2,20 +2,20 @@
 <testng-results ignored="5" total="6" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-08-10T16:05:45 BST" name="Default suite" finished-at="2022-08-10T16:06:13 BST" duration-ms="27573">
+  <suite started-at="2022-08-11T22:40:56 BST" name="Default suite" finished-at="2022-08-11T22:41:29 BST" duration-ms="33701">
     <groups>
     </groups>
-    <test started-at="2022-08-10T16:05:45 BST" name="Default test" finished-at="2022-08-10T16:06:13 BST" duration-ms="27573">
+    <test started-at="2022-08-11T22:40:56 BST" name="Default test" finished-at="2022-08-11T22:41:29 BST" duration-ms="33701">
       <class name="stewartjumbe.Appium.AppiumBasics">
-        <test-method is-config="true" signature="configureAppium()[pri:0, instance:stewartjumbe.Appium.AppiumBasics@5f8edcc5]" started-at="2022-08-10T16:05:45 BST" name="configureAppium" finished-at="2022-08-10T16:05:58 BST" duration-ms="12302" status="PASS">
+        <test-method is-config="true" signature="configureAppium()[pri:0, instance:stewartjumbe.Appium.AppiumBasics@3c0be339]" started-at="2022-08-11T22:40:56 BST" name="configureAppium" finished-at="2022-08-11T22:41:17 BST" duration-ms="21831" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- configureAppium -->
-        <test-method signature="misceallanousAppiumActions()[pri:0, instance:stewartjumbe.Appium.AppiumBasics@5f8edcc5]" started-at="2022-08-10T16:05:58 BST" name="misceallanousAppiumActions" finished-at="2022-08-10T16:06:12 BST" duration-ms="14345" status="PASS">
+        <test-method signature="miscellanousAppiumActions()[pri:0, instance:stewartjumbe.Appium.AppiumBasics@3c0be339]" started-at="2022-08-11T22:41:17 BST" name="miscellanousAppiumActions" finished-at="2022-08-11T22:41:28 BST" duration-ms="11033" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- misceallanousAppiumActions -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:stewartjumbe.Appium.AppiumBasics@5f8edcc5]" started-at="2022-08-10T16:06:12 BST" name="tearDown" finished-at="2022-08-10T16:06:13 BST" duration-ms="863" status="PASS">
+        </test-method> <!-- miscellanousAppiumActions -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:stewartjumbe.Appium.AppiumBasics@3c0be339]" started-at="2022-08-11T22:41:28 BST" name="tearDown" finished-at="2022-08-11T22:41:29 BST" duration-ms="790" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

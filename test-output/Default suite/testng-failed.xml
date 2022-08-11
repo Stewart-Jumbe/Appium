@@ -7,7 +7,7 @@
         <methods>
           <include name="configureAppium"/>
           <include name="tearDown"/>
-          <include name="misceallanousAppiumActions"/>
+          <include name="miscellanousAppiumActions"/>
         </methods>
       </class> <!-- stewartjumbe.Appium.AppiumBasics -->
     </classes>
